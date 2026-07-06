@@ -1,0 +1,26 @@
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables / secrets
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Large raw data (optional — uncomment if you don't want to push raw data to GitHub)
+# data/raw/*.csv
