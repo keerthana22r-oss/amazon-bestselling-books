@@ -12,8 +12,7 @@ cleaning with documented reasoning, exploratory analysis across authors,
 genres, years, and correlations, and a filterable interactive dashboard for
 exploring the data live.
 
-## View Project
-click here(https://keerthana22r-oss.github.io/amazon-bestselling-books/)
+
 ## Features
 
 - **Documented, reusable cleaning pipeline** (`src/data_cleaning.py`) —
@@ -96,8 +95,10 @@ streamlit run dashboard/app.py
 
 ## Dashboard Preview
 
-*(Add a screenshot of the running dashboard here once deployed — see
-`images/` folder for chart previews from the EDA.)*
+<img width="1915" height="912" alt="image" src="https://github.com/user-attachments/assets/41d88548-f7ed-4f6c-9fe1-aee7f441f73b" />
+<img width="1917" height="911" alt="image" src="https://github.com/user-attachments/assets/b3ecb5c5-abbd-482d-a72f-c7ac4c8bb8de" />
+
+
 
 `![Dashboard preview](images/genre_comparison.png)`
 
