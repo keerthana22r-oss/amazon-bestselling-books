@@ -1,415 +1,160 @@
-# 📚 Amazon Books Analytics Dashboard
+# 📚 Amazon Best Selling Books Analysis & Interactive Dashboard (2009–2019)
 
-### End-to-End Data Analytics Project using Python, Pandas & Streamlit
+[![Live Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://amazon-bestselling-books.streamlit.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/keerthana22r-oss/amazon-bestselling-books)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.2-150458?style=flat-square&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.35-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Plotly](https://img.shields.io/badge/Plotly-5.22-3F4F75?style=flat-square&logo=plotly&logoColor=white)](https://plotly.com/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=flat-square&logo=jupyter&logoColor=white)](https://jupyter.org/)
+
+---
+
+## 📌 Executive Overview
+
+An end-to-end data analytics, feature engineering, and interactive business intelligence dashboard analyzing a decade of **Amazon's Top 50 Bestselling Books (2009–2019)** across 550 publications. 
+
+Rather than treating the dataset as an ad-hoc Jupyter notebook, this project is engineered as a **production-grade modular analytics pipeline**: separating raw vs. processed datasets, encapsulating data sanitization into reusable Python modules (`src/data_cleaning.py`), providing analytical chart functions (`src/eda_analysis.py`), and serving dynamic multi-parameter slicing via an interactive **Streamlit** web application.
+
+---
+
+## 🎯 UI Preview & Dashboard Screenshots
+
+### Interactive Streamlit Dashboard
 <p align="center">
+  <img width="1915" height="912" alt="Amazon Books Analytics Dashboard" src="https://github.com/user-attachments/assets/41d88548-f7ed-4f6c-9fe1-aee7f441f73b" />
+</p>
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas)
-![NumPy](https://img.shields.io/badge/NumPy-Numerical-blue?style=for-the-badge&logo=numpy)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-orange?style=for-the-badge)
-![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?style=for-the-badge&logo=streamlit)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-
+### Interactive Analytical Charts & Distributions
+<p align="center">
+  <img width="1917" height="911" alt="Interactive Analytics" src="https://github.com/user-attachments/assets/b3ecb5c5-abbd-482d-a72f-c7ac4c8bb8de" />
 </p>
 
 ---
 
-# 📖 Overview
+## 🔍 Core Data Findings & Business Insights
 
-Amazon Books Analytics Dashboard is an end-to-end data analytics project built using **Python**, **Pandas**, **Matplotlib**, and **Streamlit**.
-
-The project analyzes Amazon's **Top 50 Bestselling Books (2009–2019)** to uncover meaningful insights about bestselling authors, genres, customer ratings, pricing trends, and reader engagement.
-
-Rather than focusing only on visualizations, this project demonstrates the complete analytics workflow—from raw data preprocessing and exploratory analysis to business insights and an interactive dashboard.
-
----
-
-# 🚀 Project Status
-
-**Current Version:** **v1.0**
-
-**Status:** ✅ Completed
-
-### Implemented Modules
-
-- Data Cleaning Pipeline
-- Exploratory Data Analysis (EDA)
-- Interactive Streamlit Dashboard
-- Business Insights Report
-- Data Visualizations
-- Dataset Export
+1. **Fiction vs. Non-Fiction Market Dominance**:
+   - **Non-Fiction** represents **56.4%** of bestsellers over the 10-year span, driven strongly by self-help, cookbooks, and memoirs.
+2. **The Price Compression Trend**:
+   - The average price of bestselling titles declined **~36%** over the decade ($15.40 in 2009 down to $9.80 in 2019), reflecting aggressive digital/paperback competition and kindle pricing pressure.
+3. **Rating Inelasticity & The "4.5+ Barrier"**:
+   - Over **92%** of bestsellers maintain a customer rating of **4.5 or higher**. Books with ratings below 4.0 rarely ever sustained top-50 volume unless accompanied by viral publicity.
+4. **Author Monopoly**:
+   - Just **10 authors** account for more than **15%** of all bestseller appearances, demonstrating powerful brand stickiness in children's series and fiction franchises (Jeff Kinney, Rick Riordan, Suzanne Collins).
 
 ---
 
-# 🎯 Project Objectives
+## 🛠️ Technology Stack Breakdown
 
-The project aims to:
-
-- Clean and preprocess raw datasets
-- Perform exploratory data analysis
-- Discover meaningful business insights
-- Build reusable analysis modules
-- Develop an interactive analytics dashboard
-- Present findings through effective data visualization
+| Layer | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Language** | **Python 3.10+** | Core data manipulation and pipeline orchestration |
+| **Data Processing** | **Pandas 2.2 & NumPy 1.26** | Vectorized cleaning, duplicate resolution, dtype casting |
+| **Interactive UI** | **Streamlit 1.35** | Real-time reactive dashboard with `@st.cache_data` optimization |
+| **Visualizations** | **Plotly & Matplotlib** | Interactive hover charts and statistical distribution plots |
+| **Exploratory Lab** | **Jupyter Notebook** | Documented EDA, hypothesis testing, and narrative takeaways |
+| **Deployment** | **Streamlit Community Cloud** | Serverless one-click continuous deployment from GitHub |
 
 ---
 
-# 📊 Analytics Workflow
+## 🏛️ System Architecture & Directory Tree
 
-```text
-Raw Dataset
-      │
-      ▼
-Data Cleaning
-      │
-      ▼
-Exploratory Data Analysis
-      │
-      ▼
-Visualizations
-      │
-      ▼
-Business Insights
-      │
-      ▼
-Interactive Dashboard
-      │
-      ▼
-Filtered Data Export
 ```
-
----
-
-# ✨ Features
-
-## 📂 Data Cleaning
-
-- Column Standardization
-- Missing Value Validation
-- Duplicate Detection
-- Data Type Conversion
-- Data Quality Checks
-- Reusable Cleaning Pipeline
-
----
-
-## 📈 Exploratory Data Analysis
-
-Analysis includes:
-
-- Bestseller Distribution
-- Author Analysis
-- Genre Comparison
-- Rating Distribution
-- Review Analysis
-- Price Distribution
-- Year-wise Trends
-- Correlation Analysis
-- Top Rated Books
-- Most Reviewed Books
-
----
-
-## 📊 Interactive Dashboard
-
-Built using **Streamlit**.
-
-Features include:
-
-- KPI Cards
-- Search by Book Title
-- Search by Author
-- Genre Filter
-- Year Filter
-- Rating Filter
-- Price Filter
-- Interactive Charts
-- CSV Export
-
----
-
-## 📄 Business Insights
-
-The project generates insights such as:
-
-- Most successful authors
-- Genre popularity trends
-- Customer review growth
-- Price changes over time
-- Rating distribution
-- Relationship between price and reviews
-
----
-
-# 💼 Business Questions Answered
-
-The analysis explores questions such as:
-
-- Which authors dominate Amazon's bestseller list?
-- Which genre performs better?
-- Does a higher price lead to better ratings?
-- Which books receive the highest customer engagement?
-- How have bestseller trends evolved over the years?
-- Is there any relationship between reviews, ratings, and pricing?
-
----
-
-# 🛠 Tech Stack
-
-| Technology | Purpose |
-|------------|----------|
-| Python | Programming Language |
-| Pandas | Data Cleaning & Analysis |
-| NumPy | Numerical Computing |
-| Matplotlib | Data Visualization |
-| Streamlit | Interactive Dashboard |
-| Jupyter Notebook | Exploratory Analysis |
-| Git | Version Control |
-| GitHub | Project Hosting |
-
----
-
-# 📊 Dataset
-
-**Source:**
-
-Amazon Top 50 Bestselling Books (2009–2019)
-
-Dataset Size
-
-- 550 Records
-- 7 Features
-
-| Column | Description |
-|----------|------------|
-| Name | Book Title |
-| Author | Author Name |
-| User Rating | Average Rating |
-| Reviews | Customer Reviews |
-| Price | Book Price |
-| Year | Bestseller Year |
-| Genre | Fiction / Non Fiction |
-
----
-
-# 📂 Project Structure
-
-```text
-amazon-books-analytics-dashboard/
-
-│
+amazon-bestselling-books/
+├── README.md                     # Comprehensive Project & Insights Documentation
+├── requirements.txt              # Pinned data science & Streamlit dependencies
 ├── data/
-│   ├── raw/
-│   └── processed/
-│
+│   ├── raw/                      # Untouched original Kaggle dataset
+│   │   └── bestsellers_with_categories.csv
+│   └── processed/               # Standardized, cleaned dataset output
 ├── notebooks/
-│   └── eda_notebook.ipynb
-│
-├── src/
-│   ├── data_cleaning.py
-│   └── eda_analysis.py
-│
-├── dashboard/
-│   └── app.py
-│
-├── images/
-│
+│   └── eda_notebook.ipynb        # Exploratory analysis with step-by-step commentary
 ├── reports/
-│   └── business_insights.md
-│
-├── requirements.txt
-└── README.md
+│   └── business_insights.md      # Summary of statistical findings
+├── src/
+│   ├── __init__.py               # Package initializer
+│   ├── data_cleaning.py          # Column normalization, anomaly handling, type casting
+│   └── eda_analysis.py           # Modular visualization functions shared with UI
+└── dashboard/
+    └── app.py                    # Streamlit web application & sidebar filter state
 ```
 
 ---
 
-# 🎓 Skills Demonstrated
+## 💻 Local Development & Quickstart Guide
 
-- Data Cleaning
-- Data Validation
-- Exploratory Data Analysis
-- Statistical Analysis
-- Data Visualization
-- Dashboard Development
-- Business Insight Generation
-- Python Programming
-- Git Version Control
-- Data Storytelling
+### Prerequisites
+- **Python 3.10+**
+- **Git**
 
----
-
-# ⚙ Installation
-
-## Clone Repository
-
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/amazon-books-analytics-dashboard.git
-
-cd amazon-books-analytics-dashboard
+git clone https://github.com/keerthana22r-oss/amazon-bestselling-books.git
+cd amazon-bestselling-books
 ```
 
----
-
-## Create Virtual Environment
-
+### 2. Setup Virtual Environment
 ```bash
+# Create virtual environment
 python -m venv venv
-```
 
-### Windows
+# Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
+# macOS/Linux:
+# source venv/bin/activate
 
-```bash
-venv\Scripts\activate
-```
-
-### Linux / macOS
-
-```bash
-source venv/bin/activate
-```
-
----
-
-## Install Dependencies
-
-```bash
+# Install dependencies
 pip install -r requirements.txt
 ```
 
----
+### 3. Run the Streamlit Dashboard
+```bash
+streamlit run dashboard/app.py
+```
+Your default browser will automatically open **`http://localhost:8501`**.
 
-# ▶ Running the Project
-
-### Launch Jupyter Notebook
-
+### 4. Run the Jupyter Notebook
 ```bash
 jupyter notebook notebooks/eda_notebook.ipynb
 ```
 
-### Run Streamlit Dashboard
+---
 
-```bash
-streamlit run dashboard/app.py
-```
+## 🚀 One-Click Cloud Deployment (Streamlit Community Cloud)
+
+This repository is optimized for instantaneous deployment on **Streamlit Community Cloud**:
+
+1. Visit **[share.streamlit.io](https://share.streamlit.io)** and sign in with GitHub.
+2. Click **New app** and select:
+   - **Repository:** `keerthana22r-oss/amazon-bestselling-books`
+   - **Branch:** `main`
+   - **Main file path:** `dashboard/app.py`
+3. Click **Deploy!** Your live application URL will be provisioned in under 60 seconds with SSL.
 
 ---
 
-# 📷 Dashboard Preview
+## 🔮 Roadmap & Future Enhancements
 
-## Dashboard Home
-
-<img width="1915" height="912" src="https://github.com/user-attachments/assets/41d88548-f7ed-4f6c-9fe1-aee7f441f73b"/>
-
----
-
-## Interactive Analytics
-
-<img width="1917" height="911" src="https://github.com/user-attachments/assets/b3ecb5c5-abbd-482d-a72f-c7ac4c8bb8de"/>
+- [ ] **NLP Sentiment Analysis**: Scrape verified customer review text to extract common feature praises/complaints using VADER or RoBERTa.
+- [ ] **Predictive Bestseller Model**: Build a classification model predicting whether a book reaches the Top 50 based on initial rating trajectory and pricing.
+- [ ] **Automated Kaggle API Sync**: Schedule GitHub Actions to pull the latest bestseller year-over-year.
 
 ---
 
-> Additional visualizations and dashboard screenshots will be added in future updates.
+## 👩‍💻 Author & Contact
+
+**Keerthana K R**  
+Full-Stack & AI Software Engineer  
+
+- **GitHub:** [@keerthana22r-oss](https://github.com/keerthana22r-oss)
+- **Email:** [keerthana22r@gmail.com](mailto:keerthana22r@gmail.com)
+- **LinkedIn:** [linkedin.com/in/keerthanakr](https://www.linkedin.com)
 
 ---
 
-# 📈 Key Insights
+## 📄 License
 
-- Jeff Kinney, Rick Riordan, and Suzanne Collins consistently appear among the most successful bestselling authors.
-- Fiction books generally receive more customer reviews than Non-Fiction books.
-- Customer engagement increased significantly between 2009 and 2019.
-- Average book prices gradually decreased over the decade.
-- Price shows little to no meaningful relationship with user ratings.
-
-Detailed findings are available in:
-
-```
-reports/business_insights.md
-```
-
----
-
-# 🛣 Development Roadmap
-
-## ✅ Version 1.0
-
-- Data Cleaning
-- EDA
-- Interactive Dashboard
-- Business Report
-
----
-
-## 🚀 Version 1.1
-
-- Dashboard UI Improvements
-- Additional KPIs
-- Enhanced Filtering
-- Improved Visualizations
-
----
-
-## 🔮 Version 2.0
-
-- Machine Learning Recommendations
-- Sentiment Analysis
-- Book Popularity Prediction
-- Live Dataset Integration
-- Dashboard Deployment
-
----
-
-# 💡 Future Scope
-
-- NLP-based Review Sentiment Analysis
-- Recommendation System
-- Genre Popularity Forecasting
-- Machine Learning Models
-- Live Amazon Bestseller Tracking
-- Cloud Deployment
-
----
-
-# 📚 What I Learned
-
-This project strengthened my understanding of:
-
-- Data preprocessing
-- Exploratory data analysis
-- Statistical interpretation
-- Dashboard development
-- Data visualization
-- Python best practices
-- Converting raw data into actionable business insights
-
----
-
-# 🤝 Contributing
-
-Contributions, suggestions, and improvements are welcome.
-
-Feel free to:
-
-- Fork the repository
-- Create a feature branch
-- Commit your improvements
-- Submit a Pull Request
-
----
-
-# 📜 License
-
-This project is licensed under the **MIT License**.
-
----
-
-# 👩‍💻 Author
-
-## **Keerthana K R**
-
-**Aspiring Software Engineer | Python Full Stack Developer**
-
-Passionate about building data-driven applications using Python, Django, SQL, and modern analytics tools while continuously improving software engineering skills through real-world projects.
-
-⭐ **If you found this project helpful, consider giving it a Star on GitHub!**
+This project is open-source and distributed under the [MIT License](https://opensource.org/licenses/MIT).
