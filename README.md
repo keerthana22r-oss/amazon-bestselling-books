@@ -123,19 +123,6 @@ jupyter notebook notebooks/eda_notebook.ipynb
 
 ---
 
-## 🚀 One-Click Cloud Deployment (Streamlit Community Cloud)
-
-This repository is optimized for instantaneous deployment on **Streamlit Community Cloud**:
-
-1. Visit **[share.streamlit.io](https://share.streamlit.io)** and sign in with GitHub.
-2. Click **New app** and select:
-   - **Repository:** `keerthana22r-oss/amazon-bestselling-books`
-   - **Branch:** `main`
-   - **Main file path:** `dashboard/app.py`
-3. Click **Deploy!** Your live application URL will be provisioned in under 60 seconds with SSL.
-
----
-
 ## 🔮 Roadmap & Future Enhancements
 
 - [ ] **NLP Sentiment Analysis**: Scrape verified customer review text to extract common feature praises/complaints using VADER or RoBERTa.
@@ -151,7 +138,7 @@ Full-Stack & AI Software Engineer
 
 - **GitHub:** [@keerthana22r-oss](https://github.com/keerthana22r-oss)
 - **Email:** [keerthana22r@gmail.com](mailto:keerthana22r@gmail.com)
-- **LinkedIn:** [linkedin.com/in/keerthanakr](https://www.linkedin.com)
+- **LinkedIn:** [linkedin.com/in/keerthana-k-r-9907aa3a8](http://www.linkedin.com/in/keerthana-k-r-9907aa3a8)
 
 ---
 
